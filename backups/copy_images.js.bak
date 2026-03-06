@@ -1,0 +1,5 @@
+// Backup of scripts/copy_images.js
+// Created before keeping fixes
+
+const info = 'backup copy of copy_images.js';
+console.log(info);

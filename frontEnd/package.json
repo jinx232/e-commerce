@@ -1,0 +1,14 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "E-commerce website frontend",
+  "private": true,
+  "scripts": {
+    "lint": "eslint .",
+    "dev": "live-server"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "live-server": "^1.2.2"
+  }
+}
