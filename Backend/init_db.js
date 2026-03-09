@@ -2,15 +2,15 @@ const mysql = require('mysql2');
 
 // Connect to MySQL server (without specifying database yet)
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: 'emmaNUEL@1' // Using the password from your server.js
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'emmaNUEL@1'
 });
 
 db.connect((err) => {
     if (err) {
         console.error('Error connecting to MySQL:', err);
-        return;
+        process.exit(1);
     }
     console.log('Connected to MySQL server...');
 
