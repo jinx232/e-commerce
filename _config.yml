@@ -1,7 +1,0 @@
-# Jekyll Build Exclusions
-#
-# Folders and files to exclude from the Jekyll build process.
-exclude:
-  - Backend/
-  - "**/node_modules"
-  - vendor/
