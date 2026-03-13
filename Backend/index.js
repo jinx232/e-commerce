@@ -1,11 +1,12 @@
-require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '.env') });
 
 const app = express();
 app.use(cors());
-const port = process.env.PORT || 5000; // You can use any port you like
+const port = process.env.PORT || 5000;
 
 // Check for required environment variables before trying to connect
 if (!process.env.DB_USER || !process.env.DB_PASSWORD || !process.env.DB_NAME) {
@@ -30,11 +31,11 @@ db.connect((err) => {
   console.log('Connected to the MySQL database.');
 });
 
-app.get('/', (req, res) => {
-  res.send('Hello from your E-commerce Backend!');
-});
+// Serve static files from the 'frontEnd' directory
+app.use(express.static(path.join(__dirname, '../frontEnd')));
 
-app.get('/products', (req, res) => {
+// API endpoint to get products
+app.get('/api/products', (req, res) => {
   const sql = 'SELECT * FROM products';
   db.query(sql, (err, results) => {
     if (err) {
@@ -44,6 +45,11 @@ app.get('/products', (req, res) => {
     }
     res.json(results);
   });
+});
+
+// All other GET requests not handled before will return the frontend's index.html file
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontEnd', 'index.html'));
 });
 
 app.listen(port, () => {
