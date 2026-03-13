@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Facial Cleanser",
+    "price": 29.00,
+    "image_url": "images/product-01.jpg"
+  },
+  {
+    "name": "Bio-shroom Serum",
+    "price": 29.00,
+    "image_url": "images/product-02.jpg"
+  },
+  {
+    "name": "Eye Cream",
+    "price": 29.00,
+    "image_url": "images/product-03.jpg"
+  },
+  {
+    "name": "Facial Treatment",
+    "price": 29.00,
+    "image_url": "images/product-04.jpg"
+  },
+  {
+    "name": "Makeup",
+    "price": 29.00,
+    "image_url": "images/product-05.jpg"
+  },
+  {
+    "name": "Facial Cleanser",
+    "price": 20.00,
+    "image_url": "images/product-06.jpg"
+  },
+  {
+    "name": "Bio-shroom Serum",
+    "price": 24.00,
+    "image_url": "images/product-07.jpg"
+  },
+  {
+    "name": "Eye Cream",
+    "price": 25.00,
+    "image_url": "images/product-08.jpg"
+  },
+  {
+    "name": "Facial Treatment",
+    "price": 23.00,
+    "image_url": "images/product-09.jpg"
+  },
+  {
+    "name": "Makeup",
+    "price": 21.00,
+    "image_url": "images/product-10.jpg"
+  }
+]

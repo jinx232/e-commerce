@@ -31,8 +31,8 @@ db.connect((err) => {
   console.log('Connected to the MySQL database.');
 });
 
-// Serve static files from the 'frontEnd' directory
-app.use(express.static(path.join(__dirname, '../frontEnd')));
+// Serve static files from the 'docs' directory
+app.use(express.static(path.join(__dirname, '../docs')));
 
 // API endpoint to get products
 app.get('/api/products', (req, res) => {
@@ -49,9 +49,8 @@ app.get('/api/products', (req, res) => {
 
 // All other GET requests not handled before will return the frontend's index.html file
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontEnd', 'index.html'));
+  res.sendFile(path.join(__dirname, '../docs', 'index.html'));
 });
-
 app.listen(port, () => {
   console.log(`Backend server is running on http://localhost:${port}`);
 });
