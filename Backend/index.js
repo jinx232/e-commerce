@@ -1,17 +1,25 @@
+require('dotenv').config();
 const express = require('express');
 const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
 app.use(cors());
-const port = 5000; // You can use any port you like
+const port = process.env.PORT || 5000; // You can use any port you like
 
-// TODO: Update with your actual database credentials
+// Check for required environment variables before trying to connect
+if (!process.env.DB_USER || !process.env.DB_PASSWORD || !process.env.DB_NAME) {
+  console.error('FATAL ERROR: Database credentials are not set in a .env file.');
+  console.error('Please create a .env file in the /Backend directory with your database details.');
+  process.exit(1);
+}
+
+// Database connection details are loaded from the .env file
 const db = mysql.createConnection({
   host: process.env.DB_HOST || 'localhost',
-  user: process.env.DB_USER || 'root',
-  password: process.env.DB_PASSWORD || 'emmaNUEL@1',
-  database: process.env.DB_NAME || 'ecommerce_db'
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 db.connect((err) => {
