@@ -33,8 +33,7 @@ jobs:
         run: |
           cd frontEnd
           npm install
-          npm install vite @vitejs/plugin-react --save-dev
-          npx vite build --base=/e-commerce-website/
+          npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
