@@ -38,16 +38,16 @@ async function initializeDatabase() {
         if (rows[0].count === 0) {
             const sql = "INSERT INTO products (name, price, image_url) VALUES ?";
             const values = [
-                ['Facial Cleanser', 29.00, '/assets/images/product-01.jpg'],
-                ['Bio-shroom Serum', 29.00, '/assets/images/product-02.jpg'],
-                ['Eye Cream', 29.00, '/assets/images/product-03.jpg'],
-                ['Facial Treatment', 29.00, '/assets/images/product-04.jpg'],
-                ['Makeup', 29.00, '/assets/images/product-05.jpg'],
-                ['Facial Cleanser', 20.00, '/assets/images/product-06.jpg'],
-                ['Bio-shroom Serum', 24.00, '/assets/images/product-07.jpg'],
-                ['Eye Cream', 25.00, '/assets/images/product-08.jpg'],
-                ['Facial Treatment', 23.00, '/assets/images/product-09.jpg'],
-                ['Makeup', 21.00, '/assets/images/product-05.jpg']
+                ['Facial Cleanser', 29.00, 'images/product-01.jpg'],
+                ['Bio-shroom Serum', 29.00, 'images/product-02.jpg'],
+                ['Eye Cream', 29.00, 'images/product-03.jpg'],
+                ['Facial Treatment', 29.00, 'images/product-04.jpg'],
+                ['Makeup', 29.00, 'images/product-05.jpg'],
+                ['Facial Cleanser', 20.00, 'images/product-06.jpg'],
+                ['Bio-shroom Serum', 24.00, 'images/product-07.jpg'],
+                ['Eye Cream', 25.00, 'images/product-08.jpg'],
+                ['Facial Treatment', 23.00, 'images/product-09.jpg'],
+                ['Makeup', 21.00, 'images/product-10.jpg']
             ];
             await connection.query(sql, [values]);
             console.log("Sample products inserted successfully.");
